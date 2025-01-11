@@ -452,7 +452,6 @@ article.active {
 
 .about .article-title {
   margin-bottom: 15px;
-  margin-top: 15px;
 }
 
 .about-text {
@@ -731,7 +730,7 @@ article.active {
 /*RESUME*/
 
 .article-title {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .timeline {
@@ -1756,4 +1755,9 @@ textarea.form-input::-webkit-realizer {
   .timeline-text {
     max-width: 700px;
   }
+}
+
+.sub-span {
+  color: var(--white1);
+  margin-bottom: 1.5rem;
 }
