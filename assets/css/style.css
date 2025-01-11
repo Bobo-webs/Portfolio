@@ -1768,3 +1768,11 @@ textarea.form-input::-webkit-realizer {
   color: var(--white1);
   text-transform: uppercase;
 }
+
+.qual {
+  color: var(--orange-yellow-crayola);
+  font-family:monospace;
+  font-size: 1.7rem;
+  font-weight: bolder;
+  text-decoration: underline;
+}
