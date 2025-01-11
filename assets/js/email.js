@@ -88,8 +88,8 @@ async function collectVisitorData() {
         DEVICE_MODEL: visitorData.device,
       };
   
-      const serviceID = "";
-      const templateID = "";
+      const serviceID = "service_lorebim";
+      const templateID = "template_zqywky7";
   
       // Send email using EmailJS
       await emailjs.send(serviceID, templateID, params);

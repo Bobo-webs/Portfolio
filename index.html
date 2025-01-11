@@ -42,7 +42,7 @@
     <script type="text/javascript">
       (function () {
         emailjs.init({
-          publicKey: "",
+          publicKey: "l6NR8HfFNhsOkGZjO",
         });
       })();
     </script>
@@ -1038,15 +1038,22 @@
         <article class="contact" data-page="contact">
           <header>
             <h2 class="h2 article-title">Contact</h2>
+            <span class="sub-span"
+              >Kindly fill the form below, and I will reach out to you
+              shortly</span
+            >
           </header>
 
           <section class="mapbox" data-mapbox>
             <figure>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-                width="400"
-                height="300"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31704.91815398498!2d3.3368500653008164!3d6.63266560391675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b93ea60971ee3%3A0xd335301146fdc207!2sOjodu%2C%20Lagos!5e0!3m2!1sen!2sng!4v1736610601826!5m2!1sen!2sng"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
                 loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </figure>
           </section>
@@ -1054,13 +1061,14 @@
           <section class="contact-form">
             <h3 class="h3 form-title">Contact Form</h3>
 
-            <form action="#" class="form" data-form>
+            <form action="#" id="myForm" class="form" data-form>
               <div class="input-wrapper">
                 <input
                   type="text"
                   name="fullname"
                   class="form-input"
                   placeholder="Full name"
+                  id="fullName"
                   required
                   data-form-input
                 />
@@ -1069,6 +1077,7 @@
                   name="email"
                   class="form-input"
                   placeholder="Email Address"
+                  id="email"
                   required
                   data-form-input
                 />
@@ -1078,11 +1087,12 @@
                 name="message"
                 class="form-input"
                 placeholder="Your Message"
+                id="message"
                 required
                 data-form-input=""
               ></textarea>
 
-              <button class="form-btn" type="submit" disabled data-form-btn>
+              <button class="form-btn" type="submit" id="submit" disabled data-form-btn>
                 <ion-icon name="paper-plane"></ion-icon>
                 <span>Send Message</span>
               </button>
