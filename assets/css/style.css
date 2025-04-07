@@ -318,10 +318,17 @@ article.active {
   font-size: 13px;
   color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
-  padding: 10px;
+  padding: 3px 6px;
   box-shadow: var(--shadow2);
   transition: var(--transition1);
   z-index: 1;
+}
+
+.info-more-btn span {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
 }
 
 .info-more-btn::before {
@@ -341,10 +348,6 @@ article.active {
 .info-more-btn:hover::before,
 .info-more-btn:focus::before {
   background: var(--bg-gradient-yellow2);
-}
-
-.info-more-btn span {
-  display: none;
 }
 
 .sidebar-info-more {
