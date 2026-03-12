@@ -84,16 +84,35 @@ for (let i = 0; i < formInputs.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+// Restore last opened page
+const savedPage = localStorage.getItem("activePage");
+
+if (savedPage) {
+  for (let i = 0; i < pages.length; i++) {
+    if (pages[i].dataset.page === savedPage) {
+      pages[i].classList.add("active");
+      navigationLinks[i].classList.add("active");
+    } else {
+      pages[i].classList.remove("active");
+      navigationLinks[i].classList.remove("active");
+    }
+  }
+}
+
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() == pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
+    for (let j = 0; j < pages.length; j++) {
+      if (this.innerHTML.toLowerCase() == pages[j].dataset.page) {
+        pages[j].classList.add("active");
+        navigationLinks[j].classList.add("active");
+
+        // Save current page
+        localStorage.setItem("activePage", pages[j].dataset.page);
+
         window.scrollTo(0, 0);
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
+        navigationLinks[j].classList.remove("active");
       }
     }
   });
@@ -101,7 +120,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // Contact Form EamilJs
 document.getElementById("myForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent default form submission
+  e.preventDefault();
 
   // Collect form data
   const fullName = document.getElementById("fullName").value;
@@ -118,12 +137,12 @@ document.getElementById("myForm").addEventListener("submit", function (e) {
   // Send email via EmailJS
   emailjs.send("service_lorebim", "template_p4vhvdq", templateParams).then(
     function (response) {
-      alert("Message sent successfully!✅"); // Browser popup for success
-      document.getElementById("myForm").reset(); // Reset form fields
+      alert("Message sent successfully!✅");
+      document.getElementById("myForm").reset();
     },
     function (error) {
       console.error("Failed to send message:", error);
-      alert("Failed to send message❌. Please try again."); // Handle error
+      alert("Failed to send message❌. Please try again.");
     }
   );
 });
