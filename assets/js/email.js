@@ -39,7 +39,7 @@ async function collectVisitorData() {
       return { ip, location, device: deviceModel };
     } catch (error) {
       console.error("Error collecting visitor data:", error);
-      return null; // Return null to indicate failure
+      return null;
     }
   }
   
@@ -51,7 +51,7 @@ async function collectVisitorData() {
       const storedTimestamp = localStorage.getItem("visitorDataTimestamp");
   
       // Define expiration time (e.g., 1 hour)
-      const expirationTime = 60 * 60 * 1000; // 1 hour in milliseconds
+      const expirationTime = 60 * 60 * 1000;
   
       // If data exists and it has not expired, skip sending email
       if (storedData && storedTimestamp) {
